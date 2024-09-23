@@ -1,10 +1,10 @@
-import {FaEdit} from "react-icons/fa";
-import {MdDelete} from "react-icons/md";
-import {useState} from "react";
+import { FaEdit } from "react-icons/fa";
+import { MdDelete } from "react-icons/md";
+import { useState } from "react";
 import UpdateNotePopup from "./UpdateNotePopup.jsx";
 
 function SingleNote(props) {
-    const {note, loggedInUserId, handleDelete, handleUpdate} = props;
+    const { note, loggedInUserId, handleDelete, handleUpdate } = props;
     const [openPopup, setOpenPopup] = useState(false);
 
     return (
@@ -32,10 +32,10 @@ function SingleNote(props) {
                     {note.userId === loggedInUserId && (
                         <div className="flex gap-[10px] items-center">
                             <button onClick={() => setOpenPopup(true)}>
-                                <FaEdit size={20}/>
+                                <FaEdit size={20} />
                             </button>
                             <button onClick={() => handleDelete(note.noteId)}>
-                                <MdDelete size={22}/>
+                                <MdDelete size={22} />
                             </button>
                         </div>
                     )}

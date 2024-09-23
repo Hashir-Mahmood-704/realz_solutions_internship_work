@@ -13,11 +13,12 @@ async function handleFileData(req, res) {
             return {
                 name: splitItem[0],
                 email: splitItem[1],
-                phone: splitItem[2],
+                phone: splitItem[2]
             };
         });
         const response = await User.insertMany(fileDataIntoArrayObjects);
-        if (response && response.length > 0) console.log('Inserted data into database successfully');
+        if (response && response.length > 0)
+            console.log('Inserted data into database successfully');
         else throw new Error('Something went wrong, unexpected response from database!');
     } catch (error) {
         console.error('Error in file operations');
